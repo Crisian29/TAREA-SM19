@@ -1,0 +1,21 @@
+/* styles.css */
+.button {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.button-registros {
+    background-color: #4CAF50;
+}
+
+.button-inicio {
+    background-color: #008CBA;
+}
+
+.button-logout {
+    background-color: #f44336;
+    margin-top: 10px;
+}

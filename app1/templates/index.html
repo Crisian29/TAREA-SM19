@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-inicio {
+            background-color: #EB9145;
+        }
+
+        .link-registros {
+            background-color: #af58c0;
+        }
+
+        .link-proveedores {
+            background-color: #b3db00;
+        }
+
+        .link-cerrar-sesion {
+            background-color: #dd5b5b;
+        }
+
+        .link-productos {
+            background-color: #fdff89;
+        }
+
+        a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    {% if es_estudiante or es_admin %}
+        <h1>Bienvenido {{ user.username }} al área de Estudiantes</h1>
+        <a href="http://127.0.0.1:8000/" class="link-inicio">Inicio</a>
+        <a href="http://127.0.0.1:8000/registro/" class="link-registros">Registros</a>
+        <a href="http://127.0.0.1:8000/proveedores/" class="link-proveedores">Proveedores</a>
+        <a href="http://127.0.0.1:8000/productos/" class="link-productos">Productos</a>
+
+    {% else %}
+        <h1>No tienes permisos para acceder a esta página</h1>
+    {% endif %}
+    <a href="{% url 'logout' %}" class="link-cerrar-sesion">Cerrar sesión</a>
+</body>
+</html>
